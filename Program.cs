@@ -12,7 +12,7 @@ namespace TZones
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddRazorPages();
-            builder.Services.AddHttpClient(); // Register HttpClient
+            builder.Services.AddHttpClient<TimeZoneModel>();
 
             var app = builder.Build();
 

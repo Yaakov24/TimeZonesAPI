@@ -456,18 +456,17 @@ new SelectListItem { Value = "Pacific/Kiritimati", Text = "Pacific/Kiritimati" }
             };
         }
 
-        public async Task OnPostAsync()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!string.IsNullOrEmpty(SelectedTimeZone))
-            { using (var client = new HttpClient())
-                {
-                    var response = await client.GetStringAsync($"https://timeapi.io/api/TimeZone/zone?timeZone={SelectedTimeZone}");
-                    var data = JObject.Parse(response);
-                    string timeZone = data["currentLocalTime"].Value<string>();
-
-                    ApiResponse = timeZone;
-                }
+            {
+                var response = await _httpClient.GetStringAsync($"https://timeapi.io/api/TimeZone/zone?timeZone={SelectedTimeZone}");
+                var data = JObject.Parse(response);
+                ApiResponse = data["currentLocalTime"].Value<string>();
             }
+            //renewing the API call and returning to my page
+            OnGet();
+            return Page();
         }
     }
 }

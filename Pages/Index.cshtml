@@ -12,10 +12,62 @@
             background: url('/images/5FB11031-7320-43C9-9BFE-7F4B008AD059.jpeg');
             background-size: cover;
             color: black;
-            font-family: Open Sans;
+            font-family: Open Sans,sans-serif;
             text-align: center;
-            padding-top: 30%;
+            padding-top: 20%;
+        }  form {
+            display: inline-block;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        select {
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .api-response-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            .api-response-box p {
+                font-size: 18px;
+                margin: 0;
+            }
     </style>
 </head>
 <body>
@@ -31,7 +83,7 @@
 
     @if (Model.ApiResponse != null)
     {
-        <div>
+        <div class="api-response-box">
             <p>Time In TimeZone: @Model.ApiResponse</p>
         </div>
     }
