@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TZones")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9068788510259c6c83156f04eee038d8aca1f8c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("TZones")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TZones")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
