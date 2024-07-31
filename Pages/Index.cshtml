@@ -1,0 +1,39 @@
+﻿@page
+@model TZones.Pages.TimeZoneModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Zones</title>
+    <style>
+        body {
+            background: url('/images/5FB11031-7320-43C9-9BFE-7F4B008AD059.jpeg');
+            background-size: cover;
+            color: black;
+            font-family: Open Sans;
+            text-align: center;
+            padding-top: 30%;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <div>
+            <label for="timezone">Choose a time zone:</label>
+            <select id="timezone" name="SelectedTimeZone" asp-items="Model.TimeZones">
+                <option value="">-- Select a time zone --</option>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    @if (Model.ApiResponse != null)
+    {
+        <div>
+            <p>Time In TimeZone: @Model.ApiResponse</p>
+        </div>
+    }
+</body>
+</html>
