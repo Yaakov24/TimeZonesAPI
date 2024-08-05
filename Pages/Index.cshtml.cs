@@ -20,7 +20,8 @@ namespace TZones.Pages
         public List<SelectListItem> TimeZones { get; set; }
         [BindProperty]
         public string SelectedTimeZone { get; set; }
-        public string ApiResponse { get; set; }
+        public string ApiResponseTime { get; set; }
+        public string ApiResponseName { get; set; }
 
         public void OnGet()
         {
@@ -447,7 +448,9 @@ new SelectListItem { Value = "Pacific/Wallis", Text = "Pacific/Wallis" },
             {
                 var response = await _httpClient.GetStringAsync($"https://timeapi.io/api/TimeZone/zone?timeZone={SelectedTimeZone}");
                 var data = JObject.Parse(response);
-                ApiResponse = data["currentLocalTime"].Value<string>();
+                ApiResponseName = data["timeZone"].Value<string>();
+                ApiResponseTime = data["currentLocalTime"].Value<string>();
+               
             }
             //renewing the API call and returning to my page
             OnGet();
