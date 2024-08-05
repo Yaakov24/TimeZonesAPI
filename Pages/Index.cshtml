@@ -77,14 +77,15 @@
             <select id="timezone" name="SelectedTimeZone" asp-items="Model.TimeZones">
                 <option value="">-- Select a time zone --</option>
             </select>
-        </div>
         <button type="submit">Submit</button>
+        </div>
     </form>
 
-    @if (Model.ApiResponse != null)
+    @if (Model.ApiResponseTime != null)
     {
         <div class="api-response-box">
-            <p>Time In TimeZone: @Model.ApiResponse</p>
+            <h4>TimeZone: @Model.ApiResponseName</h4>
+            <p>Time In TimeZone: @Model.ApiResponseTime</p>
         </div>
     }
 </body>
