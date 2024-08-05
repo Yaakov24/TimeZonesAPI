@@ -15,12 +15,17 @@
             font-family: Open Sans,sans-serif;
             text-align: center;
             padding-top: 20%;
-        }  form {
-            display: inline-block;
+        } 
+        .api-caller {
+
             padding: 20px;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            transform: scale(1.5);
+            top: 375px;
+            left: 120px;
         }
 
         select {
@@ -53,7 +58,6 @@
         }
 
         .api-response-box {
-            margin-top: 20px;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.9);
             border: 1px solid #ccc;
@@ -62,6 +66,10 @@
             max-width: 400px;
             margin-left: auto;
             margin-right: auto;
+           position: absolute;
+           transform: scale(2.5);
+           top: 385px;
+           right: 450px;
         }
 
             .api-response-box p {
@@ -72,8 +80,8 @@
 </head>
 <body>
     <form method="post">
-        <div>
-            <label for="timezone">Choose a time zone:</label>
+        <div class="api-caller">
+            <h3 for="timezone">Choose a time zone:</h3>
             <select id="timezone" name="SelectedTimeZone" asp-items="Model.TimeZones">
                 <option value="">-- Select a time zone --</option>
             </select>
