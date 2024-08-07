@@ -447,10 +447,16 @@ new SelectListItem { Value = "Pacific/Wallis", Text = "Pacific/Wallis" },
             if (!string.IsNullOrEmpty(SelectedTimeZone))
             {
                 var response = await _httpClient.GetStringAsync($"https://timeapi.io/api/TimeZone/zone?timeZone={SelectedTimeZone}");
+
                 var data = JObject.Parse(response);
-                ApiResponseName = data["timeZone"].Value<string>();
-                ApiResponseTime = data["currentLocalTime"].Value<string>();
+
+              var rawTime = data["currentLocalTime"].Value<string>();
+
+                DateTime dt = DateTime.Parse(rawTime);
                
+                ApiResponseName = data["timeZone"].Value<string>();
+                ApiResponseTime = dt.ToString("h:mm tt");
+
             }
             //renewing the API call and returning to my page
             OnGet();
