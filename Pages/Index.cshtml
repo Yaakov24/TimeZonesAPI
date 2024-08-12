@@ -16,6 +16,7 @@
             text-align: center;
             padding-top: 20%;
         } 
+        
         .api-caller {
 
             padding: 20px;
@@ -31,6 +32,7 @@
             left: 200px;
         }
 
+    
         select {
             padding: 10px 15px;
             font-size: 16px;
@@ -41,7 +43,7 @@
         }
 
         button {
-            padding: 15px 30px;
+            padding: 2px 10px;
             font-size: 16px;
             border-radius: 8px;
             background-color: #007bff;
@@ -71,8 +73,8 @@
             margin-left: auto;
             margin-right: auto;
            position: absolute;
-           transform: scale(2.2);
-           top: 385px;
+           transform: scale(2.4);
+           top: 400px;
            right: 450px;
         }
 
@@ -80,9 +82,27 @@
                 font-size: 18px;
                 margin: 0;
             }
+           
+            
+        .bottom-details {
+            position: fixed;
+            bottom: 0;
+            left: 0%;
+            width: 100%;
+            background-color: #003366;
+            color: #C0C0C0;
+            padding: 10px 0;
+            text-align: center;
+            border-top: 3px solid #00FFFF;
+            box-shadow: 0 -4px 8px black;
+            z-index: 1000;
+               
+        }
     </style>
 </head>
 <body>
+    
+    
     <form method="post">
         <div class="api-caller">
             <h3 for="timezone">Choose a time zone:</h3>
@@ -99,6 +119,12 @@
             <p>Current Local Time In @Model.ApiResponseName:</p> 
             <p>@Model.ApiResponseTime</p>
         </div>
+        <footer>
+            <div class="bottom-details">
+                <h4>Date In @Model.ApiResponseName: @Model.ApiDayTime</h4>
+            </div>"
+        </footer>
     }
+    
 </body>
 </html>
