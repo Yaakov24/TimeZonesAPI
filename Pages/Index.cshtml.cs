@@ -20,6 +20,8 @@ namespace TZones.Pages
         public List<SelectListItem> TimeZones { get; set; }
         [BindProperty]
         public string SelectedTimeZone { get; set; }
+
+        public string ApiDayTime {  get; set; }
         public string ApiResponseTime { get; set; }
         public string ApiResponseName { get; set; }
 
@@ -450,14 +452,20 @@ new SelectListItem { Value = "Pacific/Wallis", Text = "Pacific/Wallis" },
 
                 var data = JObject.Parse(response);
 
+
               var rawTime = data["currentLocalTime"].Value<string>();
+              
 
                 DateTime dt = DateTime.Parse(rawTime);
-               
-                ApiResponseName = data["timeZone"].Value<string>();
-                ApiResponseTime = dt.ToString("h:mm tt");
 
+                ApiResponseName = data["timeZone"].Value<string>();
+                
+                ApiResponseTime = dt.ToString("h:mm tt");
+                ApiDayTime = dt.ToString("MM/dd/yyyy");
+                
             }
+
+            
             //renewing the API call and returning to my page
             OnGet();
             return Page();

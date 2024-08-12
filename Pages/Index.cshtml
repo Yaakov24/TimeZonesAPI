@@ -113,16 +113,23 @@
         </div>
     </form>
 
-    @if (Model.ApiResponseTime != null)
-    {
+   
         <div class="api-response-box">
-            <p>Current Local Time In @Model.ApiResponseName:</p> 
+            <p>Current Local Time In @Model.ApiResponseName:</p>
+        @if (Model.ApiResponseTime != null)
+        {
             <p>@Model.ApiResponseTime</p>
+        }
         </div>
         <footer>
             <div class="bottom-details">
-                <h4>Date In @Model.ApiResponseName: @Model.ApiDayTime</h4>
-            </div>"
+          
+                <h4>Date In @Model.ApiResponseName:</h4>
+            @if (Model.ApiResponseTime != null)
+            {
+                <h4> @Model.ApiDayTime</h4>
+            }
+            </div>
         </footer>
     }
     
